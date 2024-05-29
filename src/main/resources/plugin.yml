@@ -2,3 +2,4 @@ name: MobHeaded
 version: '${project.version}'
 main: me.hsgamer.mobheaded.MobHeaded
 api-version: '1.13'
+folia-supported: true
