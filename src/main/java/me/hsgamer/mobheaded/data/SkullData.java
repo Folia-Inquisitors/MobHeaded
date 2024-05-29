@@ -18,6 +18,10 @@ public class SkullData {
         this.chance = chance;
     }
 
+    public SkullData(Material material, double chance) {
+        this("ITEM:" + material.name(), chance);
+    }
+
     public static SkullData fromMap(Map<String, Object> map) {
         String skull = Optional.ofNullable(map.get("skull")).map(Object::toString).orElse("Steve");
         double chance = Optional.ofNullable(map.get("chance")).map(Object::toString).map(Double::parseDouble).orElse(0.0);
@@ -44,14 +48,25 @@ public class SkullData {
             return Optional.empty();
         }
 
-        ItemStack item = new ItemStack(Material.PLAYER_HEAD);
-        SkullMeta meta = (SkullMeta) item.getItemMeta();
-        if (meta == null) {
-            return Optional.empty();
-        }
+        ItemStack item;
+        if (skull.startsWith("ITEM:")) {
+            String materialString = skull.substring(5);
+            Material material = Material.matchMaterial(materialString);
+            if (material == null || !material.isItem()) {
+                return Optional.empty();
+            }
 
-        meta = SkullUtils.applySkin(meta, skull);
-        item.setItemMeta(meta);
+            item = new ItemStack(material);
+        } else {
+            item = new ItemStack(Material.PLAYER_HEAD);
+            SkullMeta meta = (SkullMeta) item.getItemMeta();
+            if (meta == null) {
+                return Optional.empty();
+            }
+
+            meta = SkullUtils.applySkin(meta, skull);
+            item.setItemMeta(meta);
+        }
 
         return Optional.of(item);
     }
