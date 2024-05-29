@@ -50,6 +50,10 @@
                                     <pattern>io.github.projectunified.minelib</pattern>
                                     <shadedPattern>me.hsgamer.mobheaded.minelib</shadedPattern>
                                 </relocation>
+                                <relocation>
+                                    <pattern>com.cryptomorin.xseries</pattern>
+                                    <shadedPattern>me.hsgamer.mobheaded.xseries</shadedPattern>
+                                </relocation>
                             </relocations>
                         </configuration>
                     </execution>
