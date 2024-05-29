@@ -1,17 +1,20 @@
 package me.hsgamer.mobheaded;
 
-import org.bukkit.plugin.java.JavaPlugin;
+import io.github.projectunified.minelib.plugin.base.BasePlugin;
+import me.hsgamer.hscore.bukkit.config.BukkitConfig;
+import me.hsgamer.hscore.config.proxy.ConfigGenerator;
+import me.hsgamer.mobheaded.config.MainConfig;
+import me.hsgamer.mobheaded.listener.DeathListener;
 
-public final class MobHeaded extends JavaPlugin {
+import java.util.Arrays;
+import java.util.List;
 
+public final class MobHeaded extends BasePlugin {
     @Override
-    public void onEnable() {
-        // Plugin startup logic
-
-    }
-
-    @Override
-    public void onDisable() {
-        // Plugin shutdown logic
+    protected List<Object> getComponents() {
+        return Arrays.asList(
+                ConfigGenerator.newInstance(MainConfig.class, new BukkitConfig(this)),
+                new DeathListener(this)
+        );
     }
 }
