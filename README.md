@@ -1,4 +1,4 @@
-# RegularRank
+# MobHeaded
 Website: None
 
 # Official Discord 
