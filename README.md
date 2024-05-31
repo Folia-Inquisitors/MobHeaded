@@ -11,7 +11,7 @@ mvn clean install
 
 ## Description
 
-This plugin allows players to get mob heads from killing players. The drop rate of the heads, and which heads can be dropped are all configurable. If someone wants to add more lines in the configuration files just follow the file format.
+This plugin allows players to get mob heads from the players and mobs one kills. The drop rate of the heads, and which heads can be dropped are all configurable. If someone wants to add more lines in the configuration files just follow the file format.
  
 ## Default Config
 
