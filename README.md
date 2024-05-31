@@ -37,4 +37,4 @@ mob:
 ### Folia inquisitors
 
 [<img src="https://github.com/Folia-Inquisitors.png" width=80 alt="Folia-Inquisitors">](https://github.com/orgs/Folia-Inquisitors/repositories)
-[<img src="https://github.com/HSGamerpng" width=80 alt="C">](https://github.com/HSGamer)
+[<img src="https://github.com/HSGamer.png" width=80 alt="HSGamer">](https://github.com/HSGamer)
